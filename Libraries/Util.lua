@@ -13,3 +13,5 @@ end
 module.GameName = function()
     return game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 end
+
+return module
