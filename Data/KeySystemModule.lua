@@ -7,14 +7,15 @@ module.IDs = {
     [8884433153] = "2f3e1443b79ad9ca4c483dcf537d4288",
     [122220249529691] = "10934afa53546c3bbb7e6f8dd76cee72"
 }
+module.ScriptID = module.IDs[game.PlaceId] and module.IDs[game.PlaceId] or module.IDs.Universal
 
 module.Functions = {
-    CheckKey = function(args)
+    CheckKey = function(Key)
         local api = loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))()
 
-        api.script_id = args.ScriptID
+        api.script_id = module.ScriptID
     
-        local status = api.check_key(args.Key)
+        local status = api.check_key(Key)
 
         if status.code == "KEY_VALID" then
             api.load_script();
