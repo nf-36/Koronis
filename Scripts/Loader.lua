@@ -12,9 +12,15 @@ local Script = {
     },
     KeyModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/nf-36/paradise.cc/refs/heads/main/Data/KeySystemModule.lua"))(),
 }
-
 local Window = Script.Fluent.UI:CreateWindow(Script.Fluent.Window)
 Script.KeyModule.Fluent = Script.Fluent.UI
+local Notify = function(title, content, duration)
+    Script.Fluent.UI:Notify({
+        Title = title,
+        Content = content,
+        Duration = duration
+    })
+end
 
 Tabs = {
     Auth = function ()
@@ -40,12 +46,7 @@ Tabs = {
             Title = "Copy Free Key Link",
             Callback = function()
                 setclipboard("https://paradisecc.uwu.ai/#keys")
-                Script.Fluent.UI:Notify({
-                    Title = "Link Copied",
-                    Content = "Key link copied to clipboard. Check your clipboard to follow checkpoints.",
-                    Duration = 5,
-                    Image = "check"
-                })
+                Notify("Link Copied", "Free key link copied to clipboard. Check your clipboard to get a free key.", 5)
             end
         })
     end,
@@ -59,11 +60,7 @@ Tabs = {
             Title = "Copy Website Link",
             Callback = function()
                 setclipboard("https://paradisecc.uwu.ai/#products")
-                Script.Fluent.UI:Notify({
-                    Title = "Link Copied",
-                    Content = "Purchase link copied to clipboard. Check your clipboard to make a purchase.",
-                    Duration = 5,
-                })
+                Notify("Link Copied", "Website link copied to clipboard. Check your clipboard to make a purchase.", 5)
             end
         })
     end
@@ -73,10 +70,5 @@ Tabs = {
 Tabs.Auth()
 Tabs.Premium()
 
--- Notify user that the script has been loaded
-Script.Fluent.UI:Notify({
-    Title = "paradise.cc",
-    Content = "The script has been loaded.",
-    Duration = 8
-})
+Notify("paradise.cc", "The script has been loaded.", 8)
 Window:SelectTab(1) 
