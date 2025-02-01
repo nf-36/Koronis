@@ -1,5 +1,6 @@
 local module = {}
 
+module.Fluent = nil
 module.IDs = {
     ["Universal"] = "baf0792f6cce01ba2040d6bf52996eb8",
     [14350413280] = "dd624dce3675715d34af679cdc1f6860",
@@ -17,30 +18,18 @@ module.Functions = {
 
         if status.code == "KEY_VALID" then
             api.load_script();
-            Script.Fluent:Destroy()
+            module.Fluent:Destroy()
             script:Destroy()
             return
-        elseif (status.code == "KEY_HWID_LOCKED") then
-            Script.Fluent.UI:Notify({
-                Title = "Error",
-                Content = "This key is locked to another device. Please contact support.",
-                Duration = 5,
-            })
+        else
+            if module.Fluent ~= nil then
+                module.Fluent:Notify({
+                    Title = "Error",
+                    Content = status.message,
+                    Duration = 5,
+                })
+            end
             return
-        elseif (status.code == "KEY_INCORRECT") then
-            Script.Fluent.UI:Notify({
-                Title = "Error",
-                Content = "This key is incorrect. Please try again.",
-                Duration = 5,
-            })
-            return   
-        elseif (status.code == "KEY_INVALID") then
-            Script.Fluent.UI:Notify({
-                Title = "Error",
-                Content = "This key is not a valid paradise.cc key.",
-                Duration = 5,
-            })
-            return   
         end
     end
 }
