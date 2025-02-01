@@ -7,6 +7,7 @@ module.IDs = {
     [122220249529691] = "10934afa53546c3bbb7e6f8dd76cee72"
 }
 module.Notify = nil
+module.MainWindow = nil
 module.ScriptID = module.IDs[game.PlaceId] and module.IDs[game.PlaceId] or module.IDs.Universal
 
 module.Functions = {
@@ -19,6 +20,9 @@ module.Functions = {
 
         if status.code == "KEY_VALID" then
             api.load_script()
+            if module.MainWindow then
+                module.MainWindow:Destroy()
+            end
             script:Destroy()
             return
         else
