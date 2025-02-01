@@ -10,7 +10,7 @@ local Script = {
             Acrylic = true, 
         }
     },
-    KeyModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/nf-36/paradise.cc/refs/heads/main/Data/IDModule.lua"))(),
+    KeyModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/nf-36/paradise.cc/refs/heads/main/Data/KeySystemModule.lua"))(),
 }
 
 local Window = Script.Fluent.UI:CreateWindow(Script.Fluent.Window)
@@ -31,17 +31,7 @@ Tabs = {
         Authenticate:AddButton({
             Title = "Redeem Key",
             Callback = function()
-                if Script.KeyModule.IDs[game.PlaceId] then
-                    Script.KeyModule.Functions.CheckKey({
-                        Key = script_key,
-                        ScriptID = Script.KeyModule.IDs[game.PlaceId]
-                    })
-                else
-                    Script.KeyModule.Functions.CheckKey({
-                        Key = script_key,
-                        ScriptID = Script.KeyModule.IDs.Universal
-                    })
-                end
+                Script.KeyModule.Functions.CheckKey(script_key)
             end
         })
     
@@ -89,4 +79,4 @@ Script.Fluent.UI:Notify({
     Content = "The script has been loaded.",
     Duration = 8
 })
-Window:SelectTab(1)
+Window:SelectTab(1) 
