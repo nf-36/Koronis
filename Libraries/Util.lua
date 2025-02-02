@@ -9,6 +9,10 @@ module.Players = function()
     return game:GetService("Players"):GetPlayers()
 end
 
+module.KickPlayer = function(reason)
+    module.LocalPlayer():Kick(reason)
+end
+
 -- [ GameInfo Functions ] --
 module.GameName = function()
     return game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
