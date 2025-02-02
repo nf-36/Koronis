@@ -14,4 +14,8 @@ module.GameName = function()
     return game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 end
 
+module.PlayerCount = function()
+    return #game:GetService("Players"):GetPlayers()
+end
+
 return module
