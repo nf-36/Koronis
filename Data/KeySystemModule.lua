@@ -22,14 +22,12 @@ module.Functions = {
             if module.Notify ~= nil then
                 module.Notify("Success",status.message,5)
             end
-            api.load_script()
-            script:Destroy()
-            return {STATUS=true,API=api}
+            return {STATUS=true,API=api,KEYSCRIPT=script}
         else
             if module.Notify ~= nil then
                 module.Notify("Error",status.message,5)
             end
-            return {STATUS=false,API=api}
+            return {STATUS=false,API=api,KEYSCRIPT=script}
         end
     end
 }
