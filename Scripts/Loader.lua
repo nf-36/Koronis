@@ -22,7 +22,7 @@ end
 local MainWindow = createPart({
 	InstanceType = "ScreenGui",
 	Name = "paradise.cc",
-	Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui"),
+	Parent = game.CoreGui,
 	DisplayOrder = 1,
 	ResetOnSpawn = false,
 })
