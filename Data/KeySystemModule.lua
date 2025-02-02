@@ -23,16 +23,13 @@ module.Functions = {
                 module.Notify("Success",status.message,5)
             end
             api.load_script()
-            if module.MainWindow then
-                module.MainWindow:Destroy()
-            end
             script:Destroy()
-            return
+            return {STATUS=true,API=api}
         else
             if module.Notify ~= nil then
                 module.Notify("Error",status.message,5)
             end
-            return
+            return {STATUS=false,API=api}
         end
     end
 }
