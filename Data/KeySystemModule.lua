@@ -20,11 +20,7 @@ module.Functions = {
 
         if status.code == "KEY_VALID" then
             if module.Notify ~= nil then
-                module.Notify({
-                    Title = "Success",
-                    Content = status.message,
-                    Duration = 5,
-                })
+                module.Notify("Success",status.message,5)
             end
             api.load_script()
             if module.MainWindow then
@@ -34,11 +30,7 @@ module.Functions = {
             return
         else
             if module.Notify ~= nil then
-                module.Notify({
-                    Title = "Error",
-                    Content = status.message,
-                    Duration = 5,
-                })
+                module.Notify("Error",status.message,5)
             end
             return
         end
