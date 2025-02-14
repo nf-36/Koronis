@@ -22,8 +22,8 @@ module.RankInfo = {
     }
 }
 
-module.RankInfo.CheckRank = function()
-    if module.RankInfo.RankInformation.Roles[module.RankInfo.RankInformation.DetermineRole(LRM_UserNote)] == "None" then
+module.RankInfo.CheckRank = function(note)
+    if module.RankInfo.RankInformation.Roles[module.RankInfo.RankInformation.DetermineRole(note)] == "None" then
         module.Window:Dialog({
             Title = "Error",
             Content = "You do not have access to paradise.cc, please unload or exit.",
@@ -36,7 +36,7 @@ module.RankInfo.CheckRank = function()
                                 item:Destroy()
                             end
                         end
-                        game.Players.LocalPlayer:Kick("No permission!\nError Code: " .. module.RankInfo.RankInformation.DetermineRole(LRM_UserNote) .. "!")
+                        game.Players.LocalPlayer:Kick("No permission!\nError Code: " .. module.RankInfo.RankInformation.DetermineRole(note) .. "!")
                     end
                 },
                 {
