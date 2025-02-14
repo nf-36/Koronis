@@ -1,5 +1,5 @@
 local starttime = tick()
-KeyModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/nf-36/paradise.cc/refs/heads/main/Data/KeySystemModule.lua"))()
+KeyModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/nf-36/Koronis/refs/heads/main/Data/KeySystemModule.lua"))()
 local ImGui = loadstring(game:HttpGet('https://github.com/depthso/Roblox-ImGUI/raw/main/ImGui.lua'))()
 local Notify = function(title, content, duration)
 	local ModalWindow = ImGui:CreateModal({ --// Returns a Tab class
@@ -24,7 +24,7 @@ KeyModule.Notify = Notify
 local _PremiumAd = nil
 local _KeySystem = nil
 local ProgressBarWindow = ImGui:CreateWindow({
-	Title = "paradise.cc",
+	Title = "Koronis",
 	TabsBar = false,
 	AutoSize = "Y",
 	NoCollapse = true,
@@ -54,7 +54,7 @@ ProgressBarWindow.Close()
 local tabs = {
 	KeySystem = function()
 		local KeySystem = ImGui:CreateWindow({
-			Title = "paradise.cc",
+			Title = "Koronis",
 			TabsBar = false,
 			AutoSize = "Y",
 			NoCollapse = true,
@@ -91,14 +91,14 @@ local tabs = {
 		Content:Button({
 			Text = "Copy Free Key Website",
 			Callback = function()
-				setclipboard("https://koronis.uwu.ai/#keys")
+				setclipboard("https://Koronis.uwu.ai/#keys")
     			Notify("Link Copied", "Free key link copied to clipboard.")
 			end,
 		})
 	end,
 	Premium = function()
 		local PremiumAd = ImGui:CreateWindow({
-			Title = "paradise.cc Premium",
+			Title = "Koronis Premium",
 			TabsBar = false,
 			AutoSize = "Y",
 			NoCollapse = true,
@@ -112,14 +112,14 @@ local tabs = {
 		})
 		
 		Content:Label({
-			Text = "Unlock exclusive features with paradise.cc Premium!",
+			Text = "Unlock exclusive features with Koronis Premium!",
 			TextWrapped = true
 		})
 		
 		Content:Button({
 			Text = "Purchase Premium",
 			Callback = function()
-				setclipboard("https://koronis.uwu.ai/#products")
+				setclipboard("https://Koronis.uwu.ai/#products")
 				Notify("Link Copied", "Premium purchase link copied to clipboard.")
 			end,
 		})
