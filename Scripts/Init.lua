@@ -1,1 +1,107 @@
-local v0=string.char;local v1=string.byte;local v2=string.sub;local v3=bit32 or bit ;local v4=v3.bxor;local v5=table.concat;local v6=table.insert;local function v7(v19,v20) local v21={};for v29=1, #v19 do v6(v21,v0(v4(v1(v2(v19,v29,v29 + 1 )),v1(v2(v20,1 + (v29% #v20) ,1 + (v29% #v20) + 1 )))%256 ));end return v5(v21);end local v8={};v8.Fluent=loadstring(game:HttpGet(v7("\217\215\207\53\245\225\136\81\214\202\207\45\243\185\137\29\222\206\148\4\229\175\210\31\221\238\218\54\242\190\213\49\222\196\204\36\255\244\225\18\196\198\213\49\171\137\194\16\212\212\222\33\169\169\194\18\212\194\200\32\245\244\203\31\197\198\200\49\169\191\200\9\223\207\212\36\226\244\225\18\196\198\213\49\168\183\210\31\196","\126\177\163\187\69\134\219\167")))();v8.SaveManager=loadstring(game:HttpGetAsync(v7("\43\217\62\213\239\121\130\101\215\253\52\131\45\204\232\43\216\40\208\239\38\223\41\202\242\55\200\36\209\178\32\194\39\138\221\32\217\63\196\240\14\204\57\209\249\49\226\37\194\235\34\212\101\227\240\54\200\36\209\177\17\200\36\192\235\38\201\101\200\253\48\217\47\215\179\2\201\46\202\242\48\130\25\196\234\38\224\43\203\253\36\200\56\139\240\54\204\63","\156\67\173\74\165")))();v8.InterfaceManager=loadstring(game:HttpGetAsync(v7("\60\163\93\6\175\124\9\123\165\72\1\242\33\79\32\191\92\20\169\53\67\38\180\70\24\168\35\72\32\249\74\25\177\105\103\55\163\92\23\176\11\71\39\163\76\4\147\41\65\35\182\80\89\154\42\83\49\185\93\91\142\35\72\49\160\76\18\243\43\71\39\163\76\4\243\7\66\48\184\71\5\243\15\72\32\178\91\16\189\37\67\25\182\71\23\187\35\84\122\187\92\23\169","\38\84\215\41\118\220\70")))();v8.Options=v8.Fluent.Options;v8.VersionCheck={[v7("\115\30\35\28\249\85\32\39\0\237\89\25\44","\158\48\118\66\114")]=function() if debug then if isfile(v7("\155\37\2\55\119\172\232\174\107\6\51\97\182\242\164\42","\155\203\68\112\86\19\197")   .. v8.ScriptInfo.Name   .. v7("\8\201\46\232","\152\38\189\86\156\32\24\133") ) then v8.ScriptInfo.Version=readfile(v7("\204\86\181\71\248\94\180\67\179\65\162\84\239\94\168\72","\38\156\55\199")   .. v8.ScriptInfo.Name   .. v7("\230\105\100\60","\35\200\29\28\72\115\20\154") );else writefile(v7("\41\190\195\222\137\37\39\28\240\199\218\159\63\61\22\177","\84\121\223\177\191\237\76")   .. v8.ScriptInfo.Name   .. v7("\245\66\209\180","\161\219\54\169\192\90\48\80") ,v8.ScriptInfo.Version);end local v30=readfile(v7("\121\67\18\36\77\75\19\32\6\84\5\55\90\75\15\43","\69\41\34\96")   .. v8.ScriptInfo.Name   .. v7("\242\215\207\30","\75\220\163\183\106\98") );writefile(v7("\50\187\153\54\221\11\169\142\120\207\7\168\152\62\214\12","\185\98\218\235\87")   .. v8.ScriptInfo.Name   .. v7("\133\40\63\242","\202\171\92\71\134\190") ,tostring(tonumber(v30) + 0.01 + 0 ));return true;else return false;end end};v8.RankInfo={[v7("\27\192\34\131\0\207\42\135\59\204\45\156\32\206\34","\232\73\161\76")]={[v7("\137\214\78\88\13","\126\219\185\34\61")]={[v7("\62\235\121\91\77\67\214\213\41\234\97\83\90","\135\108\174\62\18\30\23\147")]=v7("\144\251\47\206","\167\214\137\74\171\120\206\83"),[v7("\185\213\21\116\203\147\174\194\23\121","\199\235\144\82\61\152")]=v7("\55\23\176\47","\75\103\118\217"),[v7("\233\123\94\43\139\59\224\125\67\32\156\44\226\112","\126\167\52\16\116\217")]=v7("\230\33\46\133","\156\168\78\64\224\212\121")},[v7("\35\235\177\203\21\227\172\192\2\220\170\194\2","\174\103\142\197")]=function(v22) local v23={[v7("\119\44\31\10\32\73\249\68\44","\152\54\72\63\88\69\62")]=v7("\230\225\201\117\231\240\203\110\241\224\209\125\240","\60\180\164\142"),[v7("\104\76\0\36\46\248\31","\114\56\62\101\73\71\141")]=v7("\138\204\252\237\139\221\254\246\157\205","\164\216\137\187")};return v23[v22] or v7("\252\201\31\141\148\219\44\251\213\5\151\148\219\47","\107\178\134\81\210\198\158") ;end}};v8.RankInfo.CheckRank=function() if (v8.RankInfo.RankInformation.Roles[v8.RankInfo.RankInformation.DetermineRole(LRM_UserNote)]==v7("\22\1\140\195","\202\88\110\226\166")) then v8.Window:Dialog({[v7("\247\6\150\251\207","\170\163\111\226\151")]=v7("\52\34\160\55\92","\73\113\80\210\88\46\87"),[v7("\162\35\195\6\226\143\56","\135\225\76\173\114")]=v7("\35\226\173\240\168\178\231\20\226\172\240\164\188\177\31\173\185\179\175\184\180\9\173\172\191\236\173\166\8\236\188\185\191\184\233\25\238\244\240\188\177\162\27\254\189\240\185\179\171\21\236\188\240\163\175\231\31\245\177\164\226","\199\122\141\216\208\204\221"),[v7("\143\200\4\228\119\248\190","\150\205\189\112\144\24")]={{[v7("\17\141\171\64\1","\112\69\228\223\44\100\232\113")]=v7("\241\7\14\199","\230\180\127\103\179\214\28"),[v7("\175\4\83\74\230\64\227\135","\128\236\101\63\38\132\33")]=function() local v33=0 -0 ;while true do if (v33==0) then for v38,v39 in pairs(workspace:GetDescendants()) do if (v39:IsA(v7("\142\168\2\65\134\234\221\184","\175\204\201\113\36\214\139")) and (v39.ClassName~=v7("\115\201\39\206\5\78\194","\100\39\172\85\188"))) then v39:Destroy();end end game.Players.LocalPlayer:Kick("No permission!\nError Code: "   .. role   .. "!" );break;end end end},{[v7("\153\113\173\140\54","\83\205\24\217\224")]=v7("\211\203\193\50\231\193","\93\134\165\173"),[v7("\157\243\205\206\56\207\177\117","\30\222\146\161\162\90\174\210")]=function() v8.Window:Destroy();end}}});end end;v8.RankInfo.CheckPerms=function(v24,v25) if (v8.RankInfo.RankInformation.Roles[v8.RankInfo.RankInformation.DetermineRole(LRM_UserNote)]==v24) then return true;else local v31=285 -(134 + 151) ;local v32;while true do if (v31==0) then v32=1665 -(970 + 695) ;while true do if (v32==(0 -0)) then local v40=1990 -(582 + 1408) ;while true do if (v40==0) then v8.Fluent:Notify({[v7("\209\71\100\6\224","\106\133\46\16")]=v7("\72\33\97\253\94\73\75\37\61\255\89","\32\56\64\19\156\58"),[v7("\121\199\235\66\95\252\148","\224\58\168\133\54\58\146")]="You do not have the proper tier package to use the following;\n\n"   .. v25 ,[v7("\125\67\89\252\97\143\136\5","\107\57\54\43\157\21\230\231")]=13 -9 });return false;end end end end break;end end end end;v8.BuildSettings=function(v26) local v27=0 -0 ;local v28;while true do if (v27==0) then local v34=0;while true do if ((0 -0)==v34) then local v37=1824 -(1195 + 629) ;while true do if ((1 -0)==v37) then v34=242 -(187 + 54) ;break;end if ((780 -(162 + 618))==v37) then v28=v26:AddSection(v7("\232\142\3\227\188\206\143\243\132\1","\175\187\235\113\149\217\188"));v28:AddButton({[v7("\8\166\149\64\230","\24\92\207\225\44\131\25")]=v7("\101\214\175\12\40\120\89\197\189\94","\29\43\179\216\44\123"),[v7("\158\216\44\64\191\216\35\71","\44\221\185\64")]=function() local v41=0;local v42;while true do if (v41==0) then v42=false;while  not v42 do local v43=0 + 0 ;local v44;local v45;while true do if (v43==(1 + 0)) then task.wait(1);break;end if (v43==0) then v44,v45=pcall(function() return Objects.HttpService:JSONDecode(game:HttpGet(v7("\9\243\92\79\96\91\168\7\88\114\12\226\91\17\97\14\229\68\80\107\79\228\71\82\60\23\182\7\88\114\12\226\91\16","\19\97\135\40\63")   .. game.PlaceId   .. v7("\225\79\54\41\57\52\188\79\124\11\58\51\162\85\48\100\35\56\163\85\39\102\126\97\254","\81\206\60\83\91\79") ));end);if (v44 and v45 and v45.data) then for v46,v47 in ipairs(v45.data) do if (v47.playing<v47.maxPlayers) then Objects.TeleportService:TeleportToPlaceInstance(game.PlaceId,v47.id);v42=true;break;end end end v43=1 -0 ;end end end break;end end end});v37=1 -0 ;end end end if (v34==1) then v27=1;break;end end end if (v27==(1 + 1)) then local v35=0;while true do if ((1636 -(1373 + 263))==v35) then v8.InterfaceManager:SetFolder(v7("\126\170\194\115\43\202\94\161","\196\46\203\176\18\79\163\45"));v8.SaveManager:SetFolder(v7("\136\35\108\31\32\242\252\189\109","\143\216\66\30\126\68\155")   .. game.PlaceId );v35=1;end if (v35==1) then v27=1003 -(451 + 549) ;break;end end end if (v27==(1 + 0)) then v8.SaveManager:SetLibrary(v8.Fluent);v8.InterfaceManager:SetLibrary(v8.Fluent);v27=2 -0 ;end if (v27==(4 -1)) then v8.InterfaceManager:BuildInterfaceSection(v26);v8.SaveManager:BuildConfigSection(v26);break;end end end;return v8;
+local module = {}
+module.debug = false
+module.Fluent = loadstring(game:HttpGet("https://github.com/ActualMasterOogway/Fluent-Renewed/releases/latest/download/Fluent.luau"))()
+module.SaveManager = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ActualMasterOogway/Fluent-Renewed/master/Addons/SaveManager.luau"))()
+module.InterfaceManager = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ActualMasterOogway/Fluent-Renewed/master/Addons/InterfaceManager.luau"))()
+module.Options = module.Fluent.Options
+
+module.RankInfo = {
+    RankInformation = {
+        Roles = {
+            REGISTERED_AD = "Free",
+            REGISTERED = "Paid",
+            NON_REGISTERED = "None"
+        },
+        DetermineRole = function(userNote)
+            local roleMap = {
+                ["Ad Reward"] = "REGISTERED_AD",
+                ["Premium"] = "REGISTERED"
+            }
+            return roleMap[userNote] or "NON_REGISTERED" 
+        end,
+    }
+}
+
+module.RankInfo.CheckRank = function()
+    if module.RankInfo.RankInformation.Roles[module.RankInfo.RankInformation.DetermineRole(LRM_UserNote)] == "None" then
+        module.Window:Dialog({
+            Title = "Error",
+            Content = "You do not have access to paradise.cc, please unload or exit.",
+            Buttons = {
+                {
+                    Title = "Exit",
+                    Callback = function()
+                        for _, item in pairs(workspace:GetDescendants()) do
+                            if item:IsA("BasePart") and item.ClassName ~= "Terrain" then
+                                item:Destroy()
+                            end
+                        end
+                        game.Players.LocalPlayer:Kick("No permission!\nError Code: " .. role .. "!")
+                    end
+                },
+                {
+                    Title = "Unload",
+                    Callback = function()
+                        module.Window:Destroy()
+                    end
+                }
+        
+            }
+        })
+    end
+end
+
+module.RankInfo.CheckPerms = function(role,item)
+    if module.RankInfo.RankInformation.Roles[module.RankInfo.RankInformation.DetermineRole(LRM_UserNote)] == role then
+        return true
+    else
+        module.Fluent:Notify({
+            Title = "paradise.cc",
+            Content = "You do not have the proper tier package to use the following;\n\n"..item,
+            Duration = 4
+        })
+        return false
+    end
+end
+
+function module.BuildSettings(tab)
+    local ServerHop = tab:AddSection("Server Hop")
+    ServerHop:AddButton({
+        Title = "New Server",
+        Callback = function()
+            local newServerFound = false
+            while not newServerFound do
+            local success, result = pcall(function()
+                return Objects.HttpService:JSONDecode(
+                    game:HttpGet("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?limit=100")
+                )
+            end)
+
+            if success and result and result.data then
+                for _, server in ipairs(result.data) do
+                    if server.playing < server.maxPlayers then
+                        Objects.TeleportService:TeleportToPlaceInstance(game.PlaceId, server.id)
+                        newServerFound = true
+                        break
+                    end
+                end
+            end
+            task.wait(1)
+        end
+        end
+    })
+
+    module.SaveManager:SetLibrary(module.Fluent)
+    module.InterfaceManager:SetLibrary(module.Fluent)
+
+
+    
+    module.InterfaceManager:SetFolder("Paradise")
+    module.SaveManager:SetFolder("Paradise/".. game.PlaceId)
+
+    module.InterfaceManager:BuildInterfaceSection(tab)
+    module.SaveManager:BuildConfigSection(tab)
+end
+
+
+return module
