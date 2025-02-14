@@ -36,7 +36,7 @@ module.RankInfo.CheckRank = function()
                                 item:Destroy()
                             end
                         end
-                        game.Players.LocalPlayer:Kick("No permission!\nError Code: " .. role .. "!")
+                        game.Players.LocalPlayer:Kick("No permission!\nError Code: " .. module.RankInfo.RankInformation.DetermineRole(LRM_UserNote) .. "!")
                     end
                 },
                 {
@@ -96,8 +96,8 @@ function module.BuildSettings(tab)
 
 
     
-    module.InterfaceManager:SetFolder("Koronis")
-    module.SaveManager:SetFolder("Koronis/".. game.PlaceId)
+    module.InterfaceManager:SetFolder("Paradise")
+    module.SaveManager:SetFolder("Paradise/".. game.PlaceId)
 
     module.InterfaceManager:BuildInterfaceSection(tab)
     module.SaveManager:BuildConfigSection(tab)
