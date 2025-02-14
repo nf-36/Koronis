@@ -19,6 +19,7 @@ module.Functions = {
 
         if status.code == "KEY_VALID" then
             if module.Notify ~= nil then
+                script_key = Key
                 module.Notify("Success",status.message,5)
             end
             return {STATUS=true,API=api,KEYSCRIPT=script}
