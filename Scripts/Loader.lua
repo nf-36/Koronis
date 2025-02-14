@@ -51,92 +51,68 @@ while Percentage < 100 do
 end
 ProgressBarWindow.Close()
 
-local tabs = {
-	KeySystem = function()
-		local KeySystem = ImGui:CreateWindow({
-			Title = "Koronis",
-			TabsBar = false,
-			AutoSize = "Y",
-			NoCollapse = true,
-			NoResize = true
-		})
-		_KeySystem = KeySystem
-			
-        KeySystem:Center()
-		local Content = KeySystem:CreateTab({
-			Visible = true
-		})
-		
-		local Key = Content:InputText({
-			Label = "Key",
-			PlaceHolder = "Key here",
-			Value = "",
-		})
-		
-		Content:Button({
-			Text = "Enter",
-			Callback = function()
-				local response = KeyModule.Functions.CheckKey(Key:GetValue())
-				if response.STATUS then
 
-					response.KEYSCRIPT:Destroy()
-					KeySystem:Close()
-					_PremiumAd:Close()
-					script_key = Key:GetValue()
-					response.API.load_script()
-					script:Destroy()
-				end
-			end,
-		})
-		Content:Button({
-			Text = "Copy Free Key Website",
-			Callback = function()
-				setclipboard("https://Koronis.uwu.ai/#keys")
-    			Notify("Link Copied", "Free key link copied to clipboard.")
-			end,
-		})
+-- [key] --
+local KeySystem = ImGui:CreateWindow({
+	Title = "Koronis",
+	Size = UDim2.fromOffset(325,175),
+	NoCollapse = true,
+	NoResize = true
+})
+_KeySystem = KeySystem
+	
+KeySystem:Center()
+local Content = KeySystem:CreateTab({
+	Name = "Redeem"
+})
+
+local Key = Content:InputText({
+	Label = "Key",
+	PlaceHolder = "Key here",
+	Value = "",
+})
+
+Content:Button({
+	Text = "Enter",
+	Callback = function()
+		local response = KeyModule.Functions.CheckKey(Key:GetValue())
+		if response.STATUS then
+
+			response.KEYSCRIPT:Destroy()
+			KeySystem:Close()
+			script_key = Key:GetValue()
+			response.API.load_script()
+			script:Destroy()
+		end
 	end,
-	Premium = function()
-		local PremiumAd = ImGui:CreateWindow({
-			Title = "Koronis Premium",
-			TabsBar = false,
-			AutoSize = "Y",
-			NoCollapse = true,
-			NoResize = true,
-			Position = _KeySystem.Position + UDim2.new(0, 0, 0.125, 0)
-		})
-		_PremiumAd = PremiumAd
-				
-		local Content = PremiumAd:CreateTab({
-			Visible = true
-		})
-		
-		Content:Label({
-			Text = "Unlock exclusive features with Koronis Premium!",
-			TextWrapped = true
-		})
-		
-		Content:Button({
-			Text = "Purchase Premium",
-			Callback = function()
-				setclipboard("https://Koronis.uwu.ai/#products")
-				Notify("Link Copied", "Premium purchase link copied to clipboard.")
-			end,
-		})
-		
-		Content:Button({
-			Text = "Close",
-			Callback = function()
-				PremiumAd:Close()
-			end,
-		})
-		
-	end
-}
+})
+Content:Button({
+	Text = "Copy Free Key Website",
+	Callback = function()
+		setclipboard("https://Koronis.uwu.ai/#keys")
+		Notify("Link Copied", "Free key link copied to clipboard.")
+	end,
+})
 
-for i,v in pairs(tabs) do
-	v()
-end
+-- [premium] --
+local PremiumContent = KeySystem:CreateTab({
+	Name = "Premium"
+})
+
+PremiumContent:Label({
+	Text = "Unlock exclusive features with Koronis Premium!",
+	TextWrapped = true
+})
+
+PremiumContent:Button({
+	Text = "Purchase Premium",
+	Callback = function()
+		setclipboard("https://Koronis.uwu.ai/#products")
+		Notify("Link Copied", "Premium purchase link copied to clipboard.")
+	end,
+})
+
+
 
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Init",
