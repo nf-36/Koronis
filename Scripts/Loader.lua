@@ -91,7 +91,7 @@ local tabs = {
 		Content:Button({
 			Text = "Copy Free Key Website",
 			Callback = function()
-				setclipboard("https://paradisecc.uwu.ai/#keys")
+				setclipboard("https://koronis.uwu.ai/#keys")
     			Notify("Link Copied", "Free key link copied to clipboard.")
 			end,
 		})
@@ -119,7 +119,7 @@ local tabs = {
 		Content:Button({
 			Text = "Purchase Premium",
 			Callback = function()
-				setclipboard("https://paradisecc.uwu.ai/#products")
+				setclipboard("https://koronis.uwu.ai/#products")
 				Notify("Link Copied", "Premium purchase link copied to clipboard.")
 			end,
 		})
