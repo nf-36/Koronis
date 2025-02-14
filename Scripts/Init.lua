@@ -96,8 +96,8 @@ function module.BuildSettings(tab)
 
 
     
-    module.InterfaceManager:SetFolder("Paradise")
-    module.SaveManager:SetFolder("Paradise/".. game.PlaceId)
+    module.InterfaceManager:SetFolder("Koronis")
+    module.SaveManager:SetFolder("Koronis/".. game.PlaceId)
 
     module.InterfaceManager:BuildInterfaceSection(tab)
     module.SaveManager:BuildConfigSection(tab)
