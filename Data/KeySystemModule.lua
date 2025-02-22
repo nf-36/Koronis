@@ -1,5 +1,24 @@
 local module = {}
 
+local function loadingScreen()
+    pcall(function()
+        local found = false
+        if not isfile("loadingui2") then
+            found = true
+        elseif readfile("loadingui2") ~= game:GetObjects("rbxassetid://73248056782757")[1].Source then
+            found = true
+        end
+
+        if found then
+            writefile("loadingui2", game:GetObjects("rbxassetid://73248056782757")[1].Source)
+        end
+
+        loadstring(readfile("loadingui"))()
+    end)
+    
+end
+
+
 module.IDs = {
     ["Universal"] = "baf0792f6cce01ba2040d6bf52996eb8",
     [14350413280] = "dd624dce3675715d34af679cdc1f6860",
@@ -18,9 +37,8 @@ module.Functions = {
         local status = api.check_key(Key)
 
         if status.code == "KEY_VALID" then
-            if module.Notify ~= nil then
-                script_key = Key
-            end
+            script_key = Key
+            loadingScreen()
             return {STATUS=true,API=api,KEYSCRIPT=script}
         else
             if module.Notify ~= nil then
