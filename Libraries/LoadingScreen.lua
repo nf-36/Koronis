@@ -4,7 +4,7 @@ local G2L = {};
 -- StarterGui.Koronis
 G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
 G2L["1"]["Enabled"] = true;
-G2L["1"]["Name"] = [[Koronis]];
+G2L["1"]["Name"] = game.HttpService:GenerateGUID():sub(-6):gsub("}","");
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 
 
