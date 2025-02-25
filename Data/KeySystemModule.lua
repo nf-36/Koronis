@@ -24,6 +24,7 @@ module.IDs = {
     [14350413280] = "dd624dce3675715d34af679cdc1f6860",
     [8884433153] = "2f3e1443b79ad9ca4c483dcf537d4288",
     [16981421605] = "d8915bbb7d1b33a9a95deb956eeb5f2c",
+    [8737602449] = "cbb78863ac6a5a39812d96b9f2c680f7"
 }
 module.Notify = nil
 module.ScriptID = module.IDs[game.PlaceId] and module.IDs[game.PlaceId] or module.IDs.Universal
