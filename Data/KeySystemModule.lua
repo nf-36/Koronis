@@ -28,7 +28,7 @@ module.IDs = {
     [14966088789] = "cbb78863ac6a5a39812d96b9f2c680f7", -- PLS DONATE BUT INF
     [6652551895] = "cbb78863ac6a5a39812d96b9f2c680f7", -- Donate Game
     [8916037983] = "cbb78863ac6a5a39812d96b9f2c680f7", -- Starving Artists
-    
+    [140588718649817] = "cbb78863ac6a5a39812d96b9f2c680f7", -- Starving Pianists
 }
 module.Notify = nil
 module.ScriptID = module.IDs[game.PlaceId] and module.IDs[game.PlaceId] or module.IDs.Universal
