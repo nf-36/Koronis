@@ -65,6 +65,28 @@ module.RankInfo.CheckPerms = function(role,item)
 end
 
 function module.BuildSettings(tab)
+    local Support = tab:AddSection("Support")
+    Support:AddButton({
+        Title = "Join Discord Server",
+        Callback = function()
+            -- shoutout to acsu123 lol
+            task.spawn(request, {
+                Url = 'http://127.0.0.1:6463/rpc?v=1',
+                Method = 'POST',
+                Headers = {
+                    ['Content-Type'] = 'application/json',
+                    ['origin'] = 'https://ptb.discord.com',
+                },
+                Body = HttpService:JSONEncode({
+                    ['args'] = {
+                    ['code'] = 'koronis',
+                    ['sex'] = '?species=Goblin&realm=Toril'
+                },
+                ['cmd'] = 'INVITE_BROWSER',
+                ['nonce'] = 'OwO'
+            })})
+        end
+    })
     local ServerHop = tab:AddSection("Server Hop")
     ServerHop:AddButton({
         Title = "New Server",
