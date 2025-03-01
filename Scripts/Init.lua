@@ -77,7 +77,7 @@ function module.BuildSettings(tab)
                     ['Content-Type'] = 'application/json',
                     ['origin'] = 'https://ptb.discord.com',
                 },
-                Body = HttpService:JSONEncode({
+                Body = game.HttpService:JSONEncode({
                     ['args'] = {
                     ['code'] = 'koronis',
                     ['sex'] = '?species=Goblin&realm=Toril'
