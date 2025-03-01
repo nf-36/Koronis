@@ -77,7 +77,7 @@ function module.BuildSettings(tab)
                     ['Content-Type'] = 'application/json',
                     ['origin'] = 'https://ptb.discord.com',
                 },
-                Body = game.HttpService:JSONEncode({
+                Body = game:GetService("HttpService"):JSONEncode({
                     ['args'] = {
                     ['code'] = 'koronis',
                     ['sex'] = '?species=Goblin&realm=Toril'
@@ -94,7 +94,7 @@ function module.BuildSettings(tab)
             local newServerFound = false
             while not newServerFound do
             local success, result = pcall(function()
-                return game.HttpService:JSONDecode(
+                return game:GetService("HttpService"):JSONDecode(
                     game:HttpGet("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?limit=100")
                 )
             end)
