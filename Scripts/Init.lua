@@ -94,7 +94,7 @@ function module.BuildSettings(tab)
             local newServerFound = false
             while not newServerFound do
             local success, result = pcall(function()
-                return Objects.HttpService:JSONDecode(
+                return game.HttpService:JSONDecode(
                     game:HttpGet("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?limit=100")
                 )
             end)
