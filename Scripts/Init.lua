@@ -5,30 +5,10 @@ module.SaveManager = loadstring(game:HttpGetAsync("https://raw.githubusercontent
 module.InterfaceManager = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ActualMasterOogway/Fluent-Renewed/master/Addons/InterfaceManager.luau"))()
 module.Options = module.Fluent.Options
 
-module.RankInfo = {
-    RankInformation = {
-        Roles = {
-            ["Ad Reward"] = "Ad Reward",
-            ["Premium"] = "Premium",
-            ["None"] = "None"
-        },
-        DetermineRole = function()
-            local roleMap = {
-                ["Ad Reward"] = "Ad Reward",
-                ["Premium"] = "Premium",
-                ["Brother"] = "Premium",
-                ["Friend"] = "Premium",
-                ["Tester"] = "Premium"
-            }
-            return roleMap[LRM_UserNote] or "None" 
-        end,
-    }
-}
+local rank = LRM_UserNote or "None"
 
 module.RankInfo.CheckRank = function(note)
-    local code_rank = module.RankInfo.RankInformation.DetermineRole()
-    local pretty_rank = module.RankInfo.RankInformation.Roles[code_rank]
-    if pretty_rank == "None" then
+    if rank == "None" then
         module.Window:Dialog({
             Title = "Error",
             Content = "You do not have access to paradise.cc, please unload or exit.",
@@ -57,12 +37,7 @@ module.RankInfo.CheckRank = function(note)
 end
 
 module.RankInfo.CheckPerms = function(role)
-    print(role)
-    print(module.RankInfo.RankInformation.Roles[module.RankInfo.RankInformation.DetermineRole()])
-    print("--------")
-    local code_rank = module.RankInfo.RankInformation.DetermineRole()
-    local pretty_rank = module.RankInfo.RankInformation.Roles[code_rank]
-    if pretty_rank == role then
+    if rank == role then
         return true
     else
         return false
