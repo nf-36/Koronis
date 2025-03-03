@@ -7,7 +7,7 @@ module.Options = module.Fluent.Options
 
 local rank = LRM_UserNote or "None"
 
-module.RankInfo.CheckRank = function(note)
+module.CheckRank = function(note)
     if rank == "None" then
         module.Window:Dialog({
             Title = "Error",
@@ -36,7 +36,7 @@ module.RankInfo.CheckRank = function(note)
     end
 end
 
-module.RankInfo.CheckPerms = function(role)
+module.CheckPerms = function(role)
     if rank == role then
         return true
     else
