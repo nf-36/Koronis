@@ -7,7 +7,7 @@ module.Options = module.Fluent.Options
 
 local rank = LRM_UserNote or "None"
 
-module.CheckRank = function(note)
+function module:CheckRank()
     if rank == "None" then
         module.Window:Dialog({
             Title = "Error",
@@ -21,7 +21,7 @@ module.CheckRank = function(note)
                                 item:Destroy()
                             end
                         end
-                        game.Players.LocalPlayer:Kick("No permission!\nError Code: " .. module.RankInfo.RankInformation.DetermineRole(note) .. "!")
+                        game.Players.LocalPlayer:Kick("No permission!\nError Code: " .. rank .. "!")
                     end
                 },
                 {
@@ -36,7 +36,7 @@ module.CheckRank = function(note)
     end
 end
 
-module.CheckPerms = function(role)
+function module:CheckPerms(role)
     if rank == role then
         return true
     else
