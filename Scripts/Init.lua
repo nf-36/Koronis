@@ -8,19 +8,19 @@ module.Options = module.Fluent.Options
 module.RankInfo = {
     RankInformation = {
         Roles = {
-            FREE = "Free",
-            PAID = "Premium",
-            NO_AUTH = "None"
+            ["Ad Reward"] = "Ad Reward",
+            ["Premium"] = "Premium",
+            ["None"] = "None"
         },
         DetermineRole = function()
             local roleMap = {
-                ["Ad Reward"] = "FREE",
-                ["Premium"] = "PAID",
-                ["Brother"] = "PAID",
-                ["Friend"] = "PAID",
-                ["Tester"] = "PAID"
+                ["Ad Reward"] = "Ad Reward",
+                ["Premium"] = "Premium",
+                ["Brother"] = "Premium",
+                ["Friend"] = "Premium",
+                ["Tester"] = "Premium"
             }
-            return roleMap[LRM_UserNote] or "NO_AUTH" 
+            return roleMap[LRM_UserNote] or "None" 
         end,
     }
 }
