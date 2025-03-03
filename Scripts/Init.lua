@@ -5,38 +5,7 @@ module.SaveManager = loadstring(game:HttpGetAsync("https://raw.githubusercontent
 module.InterfaceManager = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ActualMasterOogway/Fluent-Renewed/master/Addons/InterfaceManager.luau"))()
 module.Options = module.Fluent.Options
 
-local rank = LRM_UserNote or "None"
-
-function module:CheckRank()
-    if rank == "None" then
-        module.Window:Dialog({
-            Title = "Error",
-            Content = "You do not have access to paradise.cc, please unload or exit.",
-            Buttons = {
-                {
-                    Title = "Exit",
-                    Callback = function()
-                        for _, item in pairs(workspace:GetDescendants()) do
-                            if item:IsA("BasePart") and item.ClassName ~= "Terrain" then
-                                item:Destroy()
-                            end
-                        end
-                        game.Players.LocalPlayer:Kick("No permission!\nError Code: " .. rank .. "!")
-                    end
-                },
-                {
-                    Title = "Unload",
-                    Callback = function()
-                        module.Window:Destroy()
-                    end
-                }
-        
-            }
-        })
-    end
-end
-
-function module:CheckPerms(role)
+function module:CheckPerms(rank, role)
     if rank == role then
         return true
     else
