@@ -55,11 +55,6 @@ module.RankInfo.CheckPerms = function(role,item)
     if module.RankInfo.RankInformation.Roles[module.RankInfo.RankInformation.DetermineRole(LRM_UserNote)] == role then
         return true
     else
-        module.Fluent:Notify({
-            Title = "paradise.cc",
-            Content = "You do not have the proper tier package to use the following;\n\n"..item,
-            Duration = 4
-        })
         return false
     end
 end
