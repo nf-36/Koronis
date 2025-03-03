@@ -51,7 +51,7 @@ module.RankInfo.CheckRank = function(note)
     end
 end
 
-module.RankInfo.CheckPerms = function(role,item)
+module.RankInfo.CheckPerms = function(role)
     if module.RankInfo.RankInformation.Roles[module.RankInfo.RankInformation.DetermineRole(LRM_UserNote)] == role then
         return true
     else
