@@ -8,16 +8,19 @@ module.Options = module.Fluent.Options
 module.RankInfo = {
     RankInformation = {
         Roles = {
-            REGISTERED_AD = "Free",
-            REGISTERED = "Paid",
-            NON_REGISTERED = "None"
+            FREE = "Free",
+            PAID = "Premium",
+            NO_AUTH = "None"
         },
-        DetermineRole = function(userNote)
+        DetermineRole = function()
             local roleMap = {
-                ["Ad Reward"] = "REGISTERED_AD",
-                ["Premium"] = "REGISTERED"
+                ["Ad Reward"] = "FREE",
+                ["Premium"] = "PAID",
+                ["Brother"] = "PAID",
+                ["Friend"] = "PAID",
+                ["Tester"] = "PAID"
             }
-            return roleMap[userNote] or "NON_REGISTERED" 
+            return roleMap[LRM_UserNote] or "NO_AUTH" 
         end,
     }
 }
@@ -53,9 +56,11 @@ end
 
 module.RankInfo.CheckPerms = function(role)
     print(role)
-    print(module.RankInfo.RankInformation.Roles[module.RankInfo.RankInformation.DetermineRole(LRM_UserNote)])
+    print(module.RankInfo.RankInformation.Roles[module.RankInfo.RankInformation.DetermineRole()])
     print("--------")
-    if module.RankInfo.RankInformation.Roles[module.RankInfo.RankInformation.DetermineRole(LRM_UserNote)] == role then
+    local code_rank = module.RankInfo.RankInformation.DetermineRole()
+    local pretty_rank = module.RankInfo.RankInformation.Roles[code_rank]
+    if pretty_rank == role then
         return true
     else
         return false
