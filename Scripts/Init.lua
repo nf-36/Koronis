@@ -26,7 +26,9 @@ module.RankInfo = {
 }
 
 module.RankInfo.CheckRank = function(note)
-    if module.RankInfo.RankInformation.Roles[module.RankInfo.RankInformation.DetermineRole()] == "None" then
+    local code_rank = module.RankInfo.RankInformation.DetermineRole()
+    local pretty_rank = module.RankInfo.RankInformation.Roles[code_rank]
+    if pretty_rank == "None" then
         module.Window:Dialog({
             Title = "Error",
             Content = "You do not have access to paradise.cc, please unload or exit.",
