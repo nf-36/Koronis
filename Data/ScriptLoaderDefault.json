@@ -1,0 +1,10 @@
+{
+  "Default" : {
+    "Remote Spy":"loadstring(game:HttpGetAsync('https://github.com/richie0866/remote-spy/releases/latest/download/RemoteSpy.lua'))()",
+    "Dex Explorer":"loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/BigBoyTimme/New.Loadstring.Scripts/refs/heads/main/Dex.Explorer'))()",
+    "Infinite Yield":"loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()"
+  },
+  "Promo":{
+    "ReaperHub": "loadstring(game:HttpGetAsync('https://reaperscripts.com/loader.lua'))()"
+  }
+}
