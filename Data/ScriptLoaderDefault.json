@@ -2,21 +2,21 @@
   "Default" : {
     "Remote Spy": {
        "Script": "loadstring(game:HttpGetAsync('https://github.com/richie0866/remote-spy/releases/latest/download/RemoteSpy.lua'))()",
-       "Upload Date:": "3/25/2025 10:09 PM (CT)"
+       "UploadDate": "3/25/2025 10:09 PM (CT)"
     },
     "Dex Explorer": {
        "Script": "loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/BigBoyTimme/New.Loadstring.Scripts/refs/heads/main/Dex.Explorer'))()",
-       "Upload Date:": "3/25/2025 10:09 PM (CT)"
+       "UploadDate:": "3/25/2025 10:09 PM (CT)"
     },
     "Infinite Yield": {
        "Script": "loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()",
-       "Upload Date:": "3/25/2025 10:10 PM (CT)"
+       "UploadDate:": "3/25/2025 10:10 PM (CT)"
     },
   },
   "Promo": {
     "ReaperHub": {
        "Script": "loadstring(game:HttpGetAsync('https://reaperscripts.com/loader.lua'))()",
-       "Upload Date:": "3/25/2025 10:10 PM (CT)"
+       "UploadDate:": "3/25/2025 10:10 PM (CT)"
     },
   }
 }
