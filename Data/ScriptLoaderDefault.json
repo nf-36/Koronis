@@ -11,12 +11,12 @@
     "Infinite Yield": {
        "Script": "loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()",
        "UploadDate:": "3/25/2025 10:10 PM (CT)"
-    },
+    }
   },
   "Promo": {
     "ReaperHub": {
        "Script": "loadstring(game:HttpGetAsync('https://reaperscripts.com/loader.lua'))()",
        "UploadDate:": "3/25/2025 10:10 PM (CT)"
-    },
+    }
   }
 }
