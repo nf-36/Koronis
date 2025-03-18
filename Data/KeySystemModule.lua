@@ -29,7 +29,8 @@ module.IDs = {
     [6652551895] = "cbb78863ac6a5a39812d96b9f2c680f7", -- Donate Game | DonationAI
     [8916037983] = "cbb78863ac6a5a39812d96b9f2c680f7", -- Starving Artists | DonationAI
     [140588718649817] = "cbb78863ac6a5a39812d96b9f2c680f7", -- Starving Pianists | DonationAI
-    [125723653259639] = "179b8d89aeb59c86b1faac02490982c7" -- Drill Digging Simulator | Koronis Hub
+    [125723653259639] = "179b8d89aeb59c86b1faac02490982c7" -- Drill Digging Simulator | Koronis Hub,
+    [142823291] = "715b720f239e20ee194665e05b77ad6e" -- Murder Mystery 2 | Koronis Hub
 }
 module.Notify = nil
 module.ScriptID = module.IDs[game.PlaceId] and module.IDs[game.PlaceId] or module.IDs.Universal
