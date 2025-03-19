@@ -14,6 +14,9 @@ function module:CheckPerms(rank, role)
 end
 
 function module.BuildSettings(tab)
+    if game.PlaceId == 142823291 then
+        tab:AddSection("afy was here")
+    end
     local Support = tab:AddSection("Support")
     Support:AddButton({
         Title = "Copy Discord Server",
