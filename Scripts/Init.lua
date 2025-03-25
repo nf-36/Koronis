@@ -60,6 +60,8 @@ function module.BuildSettings(tab)
 
     module.InterfaceManager:BuildInterfaceSection(tab)
     module.SaveManager:BuildConfigSection(tab)
+
+    module.SaveManager:LoadAutoloadConfig()
 end
 
 
