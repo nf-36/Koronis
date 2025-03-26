@@ -1,9 +1,5 @@
 local module = {}
 
-module.ScriptID = module.IDs[game.PlaceId] and module.IDs[game.PlaceId] or module.IDs.Universal
-module.api = loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))()
-api.script_id = module.ScriptID
-
 module.IDs = {
     ["Universal"] = "baf0792f6cce01ba2040d6bf52996eb8", --  | Koronis Hub
     [14350413280] = "dd624dce3675715d34af679cdc1f6860", --  | Koronis Hub
@@ -17,6 +13,11 @@ module.IDs = {
     [125723653259639] = "179b8d89aeb59c86b1faac02490982c7", -- Drill Digging Simulator | Koronis Hub,
     [142823291] = "715b720f239e20ee194665e05b77ad6e" -- Murder Mystery 2 | Koronis Hub
 }
+module.ScriptID = module.IDs[game.PlaceId] and module.IDs[game.PlaceId] or module.IDs.Universal
+module.api = loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))()
+api.script_id = module.ScriptID
+
+
 module.Notify = nil
 
 
