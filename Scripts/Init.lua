@@ -24,31 +24,6 @@ function module.BuildSettings(tab)
             setclipboard("discord.gg/koronis")
         end
     })
-    local ServerHop = tab:AddSection("Server Hop")
-    ServerHop:AddButton({
-        Title = "New Server",
-        Callback = function()
-            local newServerFound = false
-            while not newServerFound do
-            local success, result = pcall(function()
-                return game:GetService("HttpService"):JSONDecode(
-                    game:HttpGet("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?limit=100")
-                )
-            end)
-
-            if success and result and result.data then
-                for _, server in ipairs(result.data) do
-                    if server.playing < server.maxPlayers then
-                        Objects.TeleportService:TeleportToPlaceInstance(game.PlaceId, server.id)
-                        newServerFound = true
-                        break
-                    end
-                end
-            end
-            task.wait(1)
-        end
-        end
-    })
 
     module.SaveManager:SetLibrary(module.Fluent)
     module.InterfaceManager:SetLibrary(module.Fluent)
