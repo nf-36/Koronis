@@ -1,23 +1,8 @@
 local module = {}
 
-local function loadingScreen()
-    pcall(function()
-        local found = false
-        if not isfile("loadingui2") then
-            found = true
-        elseif readfile("loadingui2") ~= game:GetObjects("rbxassetid://73248056782757")[1].Source then
-            found = true
-        end
-
-        if found then
-            writefile("loadingui2", game:GetObjects("rbxassetid://73248056782757")[1].Source)
-        end
-
-        loadstring(readfile("loadingui"))()
-    end)
-    
-end
-
+module.ScriptID = module.IDs[game.PlaceId] and module.IDs[game.PlaceId] or module.IDs.Universal
+module.api = loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))()
+api.script_id = module.ScriptID
 
 module.IDs = {
     ["Universal"] = "baf0792f6cce01ba2040d6bf52996eb8", --  | Koronis Hub
@@ -33,25 +18,20 @@ module.IDs = {
     [142823291] = "715b720f239e20ee194665e05b77ad6e" -- Murder Mystery 2 | Koronis Hub
 }
 module.Notify = nil
-module.ScriptID = module.IDs[game.PlaceId] and module.IDs[game.PlaceId] or module.IDs.Universal
+
 
 module.Functions = {
     CheckKey = function(Key)
-        local api = loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))()
-
-        api.script_id = module.ScriptID
-    
         local status = api.check_key(Key)
 
         if status.code == "KEY_VALID" then
             script_key = Key
-            loadingScreen()
-            return {STATUS=true,API=api,KEYSCRIPT=script}
+            return {STATUS=true,API=module.api,KEYSCRIPT=script}
         else
             if module.Notify ~= nil then
                 module.Notify("Error",status.message,5)
             end
-            return {STATUS=false,API=api,KEYSCRIPT=script}
+            return {STATUS=false,API=module.api,KEYSCRIPT=script}
         end
     end
 }
