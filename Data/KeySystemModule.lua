@@ -26,12 +26,12 @@ module.Functions = {
 
         if status.code == "KEY_VALID" then
             script_key = Key
-            return {STATUS=true,API=module.api,KEYSCRIPT=script}
+            return {STATUS=status,API=module.api,KEYSCRIPT=script}
         else
             if module.Notify ~= nil then
                 module.Notify("Error",status.message,5)
             end
-            return {STATUS=false,API=module.api,KEYSCRIPT=script}
+            return {STATUS=status,API=module.api,KEYSCRIPT=script}
         end
     end
 }
