@@ -1,4 +1,6 @@
-local starttime = tick()
+if not isfolder("Koronis") then
+	makefolder("Koronis")
+end
 KeyModule = loadstring(game:HttpGet("https://raw.githubusercontent.com/nf-36/Koronis/refs/heads/main/Data/KeySystemModule.lua"))()
 local ImGui = loadstring(game:HttpGet('https://github.com/depthso/Roblox-ImGUI/raw/main/ImGui.lua'))()
 local Notify = function(title, content, duration)
@@ -20,6 +22,23 @@ local Notify = function(title, content, duration)
 	})
 end
 KeyModule.Notify = Notify
+
+
+local keyFile
+if not isfile("Koronis/key.txt") then
+	writefile("Koronis/key.txt","")
+	keyFile = readfile("Koronis/key.txt")
+else
+	keyFile = readfile("Koronis/key.txt")
+	local response = KeyModule.Functions.CheckKey(keyFile)
+	if response.STATUS.code == "KEY_VALID" then
+		script_key = keyFile
+		response.API.load_script()
+		script:Destroy()
+		return
+
+	end
+end
 
 local _PremiumAd = nil
 local _KeySystem = nil
@@ -76,8 +95,8 @@ Content:Button({
 	Text = "Enter",
 	Callback = function()
 		local response = KeyModule.Functions.CheckKey(Key:GetValue())
-		if response.STATUS then
-
+		if response.STATUS.code == "KEY_VALID" then
+			writefile("Koronis/key.txt",Key:GetValue())
 			response.KEYSCRIPT:Destroy()
 			KeySystem:Close()
 			script_key = Key:GetValue()
@@ -116,6 +135,6 @@ PremiumContent:Button({
 
 game:GetService("StarterGui"):SetCore("SendNotification", {
 	Title = "Init",
-	Text = "Script loaded in "..(math.round(tick()-starttime)).."s",
+	Text = "Script loaded",
 	Duration = 5
 })
