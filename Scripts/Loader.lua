@@ -32,6 +32,11 @@ else
 	keyFile = readfile("Koronis/key.txt")
 	local response = KeyModule.Functions.CheckKey(keyFile)
 	if response.STATUS.code == "KEY_VALID" then
+		game:GetService("StarterGui"):SetCore("SendNotification", {
+			Title = "Found User",
+			Text = "Key Found, Loading Koronis...",
+			Duration = 5
+		})
 		script_key = keyFile
 		response.API.load_script()
 		script:Destroy()
