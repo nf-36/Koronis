@@ -3,7 +3,6 @@ local module = {}
 module.debug = false
 module.Fluent = loadstring(game:HttpGet("https://github.com/ActualMasterOogway/Fluent-Renewed/releases/latest/download/Fluent.luau"))()
 module.SaveManager = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ActualMasterOogway/Fluent-Renewed/master/Addons/SaveManager.luau"))()
-module.InterfaceManager = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/ActualMasterOogway/Fluent-Renewed/master/Addons/InterfaceManager.luau"))()
 module.Options = module.Fluent.Options
 
 function module:CheckPerms(rank, role)
@@ -27,15 +26,8 @@ function module.BuildSettings(tab)
     })
 
     module.SaveManager:SetLibrary(module.Fluent)
-    module.InterfaceManager:SetLibrary(module.Fluent)
-
-
-    
-    module.InterfaceManager:SetFolder("Koronis")
     module.SaveManager:SetFolder("Koronis/".. game.PlaceId)
-
     module.SaveManager:BuildConfigSection(tab)
-
     module.SaveManager:LoadAutoloadConfig()
 end
 
