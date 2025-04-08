@@ -1,3 +1,4 @@
+repeat task.wait(0.01) until game:IsLoaded()
 local module = {}
 module.debug = false
 module.Fluent = loadstring(game:HttpGet("https://github.com/ActualMasterOogway/Fluent-Renewed/releases/latest/download/Fluent.luau"))()
