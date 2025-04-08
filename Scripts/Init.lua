@@ -34,7 +34,6 @@ function module.BuildSettings(tab)
     module.InterfaceManager:SetFolder("Koronis")
     module.SaveManager:SetFolder("Koronis/".. game.PlaceId)
 
-    module.InterfaceManager:BuildInterfaceSection(tab)
     module.SaveManager:BuildConfigSection(tab)
 
     module.SaveManager:LoadAutoloadConfig()
