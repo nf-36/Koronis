@@ -354,7 +354,51 @@ G2L["24"]["Name"] = [[check]];
 -- StarterGui.KoronisKeySystem.Frame.LocalScript
 G2L["25"] = Instance.new("LocalScript", G2L["8"]);
 
+-- StarterGui.KoronisKeySystem.Frame.COPY_KEY
+G2L["26"] = Instance.new("TextButton", G2L["8"]);
+G2L["26"]["TextWrapped"] = true;
+G2L["26"]["BorderSizePixel"] = 0;
+G2L["26"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["26"]["TextSize"] = 14;
+G2L["26"]["TextScaled"] = true;
+G2L["26"]["BackgroundColor3"] = Color3.fromRGB(34, 34, 34);
+G2L["26"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["26"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["26"]["Size"] = UDim2.new(0, 59, 0, 35);
+G2L["26"]["Name"] = [[COPY_KEY]];
+G2L["26"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["26"]["Text"] = [[Get Key]];
+G2L["26"]["Position"] = UDim2.new(0.89857, 0, 0.4, 0);
 
+
+-- StarterGui.KoronisKeySystem.Frame.COPY_KEY.UICorner
+G2L["27"] = Instance.new("UICorner", G2L["26"]);
+
+
+
+-- StarterGui.KoronisKeySystem.Frame.COPY_KEY.UIStroke
+G2L["28"] = Instance.new("UIStroke", G2L["26"]);
+G2L["28"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["28"]["Thickness"] = 3;
+G2L["28"]["Color"] = Color3.fromRGB(51, 51, 51);
+
+
+-- StarterGui.KoronisKeySystem.Frame.COPY_KEY.UIStroke
+G2L["29"] = Instance.new("UIStroke", G2L["26"]);
+G2L["29"]["Thickness"] = 3;
+
+
+-- StarterGui.KoronisKeySystem.Frame.COPY_KEY.UITextSizeConstraint
+G2L["2a"] = Instance.new("UITextSizeConstraint", G2L["26"]);
+G2L["2a"]["MaxTextSize"] = 20;
+
+
+-- StarterGui.KoronisKeySystem.Frame.COPY_KEY.UIPadding
+G2L["2b"] = Instance.new("UIPadding", G2L["26"]);
+G2L["2b"]["PaddingTop"] = UDim.new(0, 5);
+G2L["2b"]["PaddingRight"] = UDim.new(0, 5);
+G2L["2b"]["PaddingLeft"] = UDim.new(0, 5);
+G2L["2b"]["PaddingBottom"] = UDim.new(0, 5);
 
 -- StarterGui.KoronisKeySystem.Frame.TextBox.LocalScript
 local function C_13()
@@ -379,6 +423,7 @@ local script = G2L["13"];
 	end)
 end;
 task.spawn(C_13);
+
 -- StarterGui.KoronisKeySystem.Frame.LocalScript
 local function C_25()
 local script = G2L["25"];
@@ -446,6 +491,11 @@ local script = G2L["25"];
                         game:GetService("CoreGui")[kSpoof]:Destroy()
                         script:Destroy()
                     end
+				elseif button.Name == "COPY_KEY" then
+					if setclipboard then 
+						setclipboard("https://koronis.uwu.ai/#keys")
+					end
+					sendNotification("Key link has been copied to your clipboard!")				
 				elseif button.Name == "SAVE_LOGIN" then
 					KORONIS_SAVEKEY = not KORONIS_SAVEKEY
 	
