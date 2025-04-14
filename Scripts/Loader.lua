@@ -488,9 +488,12 @@ local script = G2L["25"];
                         end
                         script_key = script.Parent.TextBox.Text
                         response.API.load_script()
+						sendNotification("Loading Koronis!")
                         game:GetService("CoreGui")[kSpoof]:Destroy()
                         script:Destroy()
-                    end
+					elseif response.STATUS.code == "KEY_HWID_LOCKED" then
+						sendNotification("Your HWID must be reset, please join the discord or get a new key!")
+					end
 				elseif button.Name == "COPY_KEY" then
 					if setclipboard then 
 						setclipboard("https://koronis.uwu.ai/#keys")
