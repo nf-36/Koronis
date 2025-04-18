@@ -400,29 +400,52 @@ G2L["2b"]["PaddingRight"] = UDim.new(0, 5);
 G2L["2b"]["PaddingLeft"] = UDim.new(0, 5);
 G2L["2b"]["PaddingBottom"] = UDim.new(0, 5);
 
--- StarterGui.KoronisKeySystem.Frame.TextBox.LocalScript
-local function C_13()
-local script = G2L["13"];
-	local oldSize = script.Parent.Size
-	
-	local function scaled(scaleFactor)
-		return UDim2.new(
-			oldSize.X.Scale/scaleFactor,
-			oldSize.X.Offset/scaleFactor,
-			oldSize.Y.Scale/scaleFactor,
-			oldSize.Y.Offset/scaleFactor
-		)
-	end
-	
-	script.Parent.MouseEnter:Connect(function()
-		script.Parent:TweenSize(scaled(1.25), Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, 0.15, true)
-	end)
-	
-	script.Parent.MouseLeave:Connect(function()
-		script.Parent:TweenSize(oldSize, Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, 0.15, true)
-	end)
-end;
-task.spawn(C_13);
+-- StarterGui.KoronisKeySystem.Frame.CLOSE
+G2L["2c"] = Instance.new("TextButton", G2L["8"]);
+G2L["2c"]["TextWrapped"] = true;
+G2L["2c"]["BorderSizePixel"] = 0;
+G2L["2c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2c"]["TextSize"] = 14;
+G2L["2c"]["TextScaled"] = true;
+G2L["2c"]["BackgroundColor3"] = Color3.fromRGB(34, 34, 34);
+G2L["2c"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["2c"]["AnchorPoint"] = Vector2.new(0.5, 0.5);
+G2L["2c"]["Size"] = UDim2.new(0, 34, 0, 35);
+G2L["2c"]["Name"] = [[CLOSE]];
+G2L["2c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2c"]["Text"] = [[X]];
+G2L["2c"]["Position"] = UDim2.new(0.93429, 0, 0.12, 0);
+
+
+-- StarterGui.KoronisKeySystem.Frame.CLOSE.UICorner
+G2L["2d"] = Instance.new("UICorner", G2L["2c"]);
+
+
+
+-- StarterGui.KoronisKeySystem.Frame.CLOSE.UIStroke
+G2L["2e"] = Instance.new("UIStroke", G2L["2c"]);
+G2L["2e"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["2e"]["Thickness"] = 3;
+G2L["2e"]["Color"] = Color3.fromRGB(51, 51, 51);
+
+
+-- StarterGui.KoronisKeySystem.Frame.CLOSE.UIStroke
+G2L["2f"] = Instance.new("UIStroke", G2L["2c"]);
+G2L["2f"]["Thickness"] = 3;
+
+
+-- StarterGui.KoronisKeySystem.Frame.CLOSE.UITextSizeConstraint
+G2L["30"] = Instance.new("UITextSizeConstraint", G2L["2c"]);
+G2L["30"]["MaxTextSize"] = 20;
+
+
+-- StarterGui.KoronisKeySystem.Frame.CLOSE.UIPadding
+G2L["31"] = Instance.new("UIPadding", G2L["2c"]);
+G2L["31"]["PaddingTop"] = UDim.new(0, 5);
+G2L["31"]["PaddingRight"] = UDim.new(0, 5);
+G2L["31"]["PaddingLeft"] = UDim.new(0, 5);
+G2L["31"]["PaddingBottom"] = UDim.new(0, 5);
+
 
 -- StarterGui.KoronisKeySystem.Frame.LocalScript
 local function C_25()
@@ -493,12 +516,16 @@ local script = G2L["25"];
                         script:Destroy()
 					elseif response.STATUS.code == "KEY_HWID_LOCKED" then
 						sendNotification("Your HWID must be reset, please join the discord or get a new key!")
+					elseif response.STATUS.code == "KEY_INVALID" then
+						sendNotification("Uh oh, it looks like this key might be expired or invalid!")	
 					end
 				elseif button.Name == "COPY_KEY" then
 					if setclipboard then 
 						setclipboard("https://koronis.uwu.ai/#keys")
 					end
-					sendNotification("Key link has been copied to your clipboard!")				
+					sendNotification("Key link has been copied to your clipboard!")
+				elseif button.Name == "CLOSE" then
+					game:GetService("CoreGui")[kSpoof]:Destroy()
 				elseif button.Name == "SAVE_LOGIN" then
 					KORONIS_SAVEKEY = not KORONIS_SAVEKEY
 	
