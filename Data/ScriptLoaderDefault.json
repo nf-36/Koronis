@@ -18,8 +18,8 @@
   },
   "Promo": {
     "1":{
-       "Name": "ReaperHub",
-       "Script": "loadstring(game:HttpGetAsync('https://reaperscripts.com/loader.lua'))()",
+       "Name": "Somber",
+       "Script": "loadstring(game:HttpGet('https://getsomber.com/loader.lua'))()",
        "UploadDate:": "3/25/2025 10:10 PM (CT)"
     }
   }
