@@ -10,7 +10,8 @@ module.IDs = {
     [73801682582529] = "fe3a3d936137408a4f153979276d1416", -- Zombie RNG Lobby | Koronis Hub
     [84759971088447] = "fe3a3d936137408a4f153979276d1416", -- Zombie RNG Game | Koronis Hub
     [126884695634066] = "c20cd2b9eb243faf8a3884d9ea459bf1", -- Grow A Garden | Koronis Hub
-    [122678592501168] = "c4ed87d778560d4ffb69a1381802c24f" -- Beaks | Koronis Hub
+    [122678592501168] = "c4ed87d778560d4ffb69a1381802c24f", -- Beaks | Koronis Hub
+    [606849621] = "764d9f1b4b09fec218950bcdf95b8cc2"
 }
 module.ScriptID = module.IDs[game.PlaceId] and module.IDs[game.PlaceId] or module.IDs.Universal
 module.api = loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))()
