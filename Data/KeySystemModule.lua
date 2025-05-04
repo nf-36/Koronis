@@ -1,18 +1,15 @@
 local module = {}
 
 module.IDs = {
-    ["Universal"] = "baf0792f6cce01ba2040d6bf52996eb8", --  | Koronis Hub
-    [14350413280] = "dd624dce3675715d34af679cdc1f6860", --  | Koronis Hub
-    [8884433153] = "2f3e1443b79ad9ca4c483dcf537d4288", --  | Koronis Hub
-    [16981421605] = "d8915bbb7d1b33a9a95deb956eeb5f2c", -- | Koronis Hub
-    [125723653259639] = "179b8d89aeb59c86b1faac02490982c7", -- Drill Digging Simulator | Koronis Hub,
+    ["Universal"] = "baf0792f6cce01ba2040d6bf52996eb8", --  Universal | Koronis Hub
+    [8884433153] = "2f3e1443b79ad9ca4c483dcf537d4288", --  Collect All Pets | Koronis Hub
     [142823291] = "715b720f239e20ee194665e05b77ad6e", -- Murder Mystery 2 | Koronis Hub
     [73801682582529] = "fe3a3d936137408a4f153979276d1416", -- Zombie RNG Lobby | Koronis Hub
     [84759971088447] = "fe3a3d936137408a4f153979276d1416", -- Zombie RNG Game | Koronis Hub
     [126884695634066] = "c20cd2b9eb243faf8a3884d9ea459bf1", -- Grow A Garden | Koronis Hub
     [122678592501168] = "c4ed87d778560d4ffb69a1381802c24f", -- Beaks | Koronis Hub
-    [606849621] = "764d9f1b4b09fec218950bcdf95b8cc2",
-    [121154762177314] = "90623d08618a93383a67f543e84da5dc"
+    [606849621] = "764d9f1b4b09fec218950bcdf95b8cc2", -- Jailbreak | Koronis Hub
+    [121154762177314] = "90623d08618a93383a67f543e84da5dc" -- Grow a Tree | Koronis Hub
 }
 module.ScriptID = module.IDs[game.PlaceId] and module.IDs[game.PlaceId] or module.IDs.Universal
 module.api = loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))()
