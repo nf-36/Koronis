@@ -500,9 +500,9 @@ local script = G2L["25"];
 			button.Activated:Connect(function()
 				if button.Name == "DISCORD" then
 					if setclipboard then 
-						setclipboard("discord.gg/koronis")
+						setclipboard("https://discord.gg/twttu3g4pj")
 					end
-					sendNotification("discord.gg/koronis has been copied to your clipboard!")
+					sendNotification("Koronis has been copied to your clipboard!")
 				elseif button.Name == "SUBMIT" then
 					local response = KeyModule.Functions.CheckKey(script.Parent.TextBox.Text)
                     if response.STATUS.code == "KEY_VALID" then
