@@ -44,6 +44,7 @@ G2L["2"]["Position"] = UDim2.new(0.5, 0, 0.85, 0);
 G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["2"]["Name"] = [[NotificationHolder]];
 G2L["2"]["BackgroundTransparency"] = 1;
+G2L["2"]["ZIndex"] = 999;
 
 
 -- StarterGui.KoronisKeySystem.NotificationHolder.UIListLayout
