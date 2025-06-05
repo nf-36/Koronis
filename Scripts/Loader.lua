@@ -522,7 +522,7 @@ local script = G2L["25"];
 					end
 				elseif button.Name == "COPY_KEY" then
 					if setclipboard then 
-						setclipboard("https://koronis.uwu.ai/#keys")
+						setclipboard("https://koronis.xyz/get-key/")
 					end
 					sendNotification("Key link has been copied to your clipboard!")
 				elseif button.Name == "CLOSE" then
