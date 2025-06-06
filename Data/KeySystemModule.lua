@@ -10,7 +10,8 @@ module.IDs = {
     -- [122678592501168] = "c4ed87d778560d4ffb69a1381802c24f", -- Beaks | Koronis Hub
     [606849621] = "764d9f1b4b09fec218950bcdf95b8cc2", -- Jailbreak | Koronis Hub
     [121154762177314] = "90623d08618a93383a67f543e84da5dc", -- Grow a Tree | Koronis Hub
-    [81440632616906] = "24436993afc067cac69ff4e3c0bce3a8" -- Dig to Earth's Core | Koronis Hub
+    [81440632616906] = "24436993afc067cac69ff4e3c0bce3a8", -- Dig to Earth's Core | Koronis Hub
+    [101949297449238] = "d0fe3a812ac0aaf27e6b7cb94350d9a2"
 }
 module.ScriptID = module.IDs[game.PlaceId] and module.IDs[game.PlaceId] or module.IDs.Universal
 module.api = loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))()
