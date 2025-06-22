@@ -501,7 +501,7 @@ local script = G2L["25"];
 			button.Activated:Connect(function()
 				if button.Name == "DISCORD" then
 					if setclipboard then 
-						setclipboard("https://discord.gg/KThfNukpzF")
+						setclipboard("https://discord.gg/koronis")
 					end
 					sendNotification("Koronis has been copied to your clipboard!")
 				elseif button.Name == "SUBMIT" then
