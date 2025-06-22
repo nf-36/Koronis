@@ -21,7 +21,7 @@ function module.BuildSettings(tab)
     Support:AddButton({
         Title = "Copy Discord Server",
         Callback = function()
-            setclipboard("https://discord.gg/twttu3g4pj")
+            setclipboard("https://discord.gg/KThfNukpzF")
         end
     })
 
