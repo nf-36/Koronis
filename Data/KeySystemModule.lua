@@ -7,7 +7,8 @@ module.IDs = {
     [126884695634066] = "8cb305a7f15b76a99ee86609a57e02f8", -- Grow A Garden | Loader
     [81440632616906] = "8cb305a7f15b76a99ee86609a57e02f8", -- Dig to Earth's Core | Loader
     [89343390950953] = "8cb305a7f15b76a99ee86609a57e02f8", -- My Singing Brainrot | Loader
-    [17295191183] = "8cb305a7f15b76a99ee86609a57e02f8" -- Ultimate Town Multiplayer | Loader
+    [17295191183] = "8cb305a7f15b76a99ee86609a57e02f8", -- Ultimate Town Multiplayer | Loader
+    [137925884276740] = "8cb305a7f15b76a99ee86609a57e02f8" -- Build a Plane
 }
 module.ScriptID = module.IDs[game.PlaceId] and module.IDs[game.PlaceId] or module.IDs.Universal
 module.api = loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))()
